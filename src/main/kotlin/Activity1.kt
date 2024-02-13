@@ -6,7 +6,7 @@ fun main() {
 
     for(group in noOfGroup) {
 
-    print("Enter your firstname: ")
+    print("Enter your Firstname: ")
     var fname = readLine()
 
         print("Enter your middle initial: ")
