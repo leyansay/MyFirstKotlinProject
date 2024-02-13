@@ -9,7 +9,7 @@ fun main() {
     print("Enter your Firstname: ")
     var fname = readLine()
 
-        print("Enter your middle initial: ")
+        print("Enter your Middle initial: ")
         var mi = readLine()
 
         print("Enter your lastname: ")
