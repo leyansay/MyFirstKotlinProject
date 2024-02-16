@@ -13,20 +13,20 @@ fun main() {
     for (group in noOfGroup) {
 
         print("Enter your name: ")
-        val name = readLine()
+        val name = readLine()?.toString()
 
-        print("Enters your age: ")
-        val age = readLine()
+        print("Enter your age: ")
+        val age = readLine()?.toIntOrNull()
 
-        if (age == null || age < 1.toString()) {
+        if (age == null || age < 1) {
             println("Invalid age")
-        }else if (age < 17.toString()){
+        }else if (age < 17){
             println("$name's is a young")
-        } else if (age < 30.toString()) {
+        } else if (age < 30) {
             println("$name's is a young adults")
-        } else if (age < 59.toString()) {
+        } else if (age < 59) {
             println("$name's is an adult")
-        } else if (age > 60.toString()) {
+        } else if (age > 60) {
             println("$name's is a senior")
         }
 
