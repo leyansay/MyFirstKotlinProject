@@ -15,7 +15,7 @@ fun main() {
         print("Enter your name: ")
         val name = readLine()
 
-        print("Enter your age: ")
+        print("Enters your age: ")
         val age = readLine()
 
         if (age == null || age < 1.toString()) {
