@@ -2,7 +2,13 @@ package org.example
 
 fun main() {
 
-    val noOfGroup = 1..4
+    print("Enter the number of your group members: ")
+    val no = readLine()?.toIntOrNull() ?: 0
+
+    println("You have $no members on your group")
+    val num = readLine()
+
+    val noOfGroup = 1..no
 
     for (group in noOfGroup) {
 
@@ -12,7 +18,7 @@ fun main() {
         print("Enter your age: ")
         val age = readLine()
 
-        if (age!! < 1.toString()) {
+        if (age == null || age < 1.toString()) {
             println("Invalid age")
         }else if (age < 17.toString()){
             println("$name's is a young")
