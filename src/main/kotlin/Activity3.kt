@@ -12,7 +12,7 @@ fun main() {
 
     for (group in noOfGroup) {
 
-        print("Please enter your name: ")
+        print("Enter your name: ")
         val name = readLine()?.toString()
 
         print("Enter your age: ")
