@@ -1,0 +1,32 @@
+fun main() {
+    println("Enter an integer:")
+    val input = readLine()?.toIntOrNull()
+
+    if (input == null) {
+        println("Invalid input. Please enter a valid integer.")
+        return
+    }
+
+    calculateFactorial(input)
+}
+
+fun calculateFactorial(n: Int) {
+    if (n < 0) {
+        println("Invalid input. Please enter a non-negative integer.")
+        return
+    }
+    var factorial = 1
+    var expression = "$n! = "
+    for (i in n downTo 1) {
+        if (i != n) {
+            expression += "x "
+        }
+        expression += "$i"
+        factorial *= i
+        if (i != 1) {
+            expression += " "
+        }
+    }
+    expression += " = $factorial"
+    println(expression)
+}
