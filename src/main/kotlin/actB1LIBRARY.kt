@@ -3,7 +3,7 @@ import java.time.LocalTime
 
 fun main() {
     /* Activity B:1 Automates the school’s library
-    GROUP MEMBERS : [DIOCSON, SULLAN, LUMO-OS, LUPUYON]
+    GROUP MEMBERS : [DIOCSON, SULLAN, LUPUYON, LUMO-OS]
     */
     val borrowedBooks = Array<Quadruple<String, String, LocalDate, LocalTime, String?, String?, String?>>(100) { Quadruple("", "", LocalDate.MIN, LocalTime.MIN, "", "", "") }
     val validCourses = arrayOf("BSIT", "BEED", "BSED", "BSHM", "BSBA")
