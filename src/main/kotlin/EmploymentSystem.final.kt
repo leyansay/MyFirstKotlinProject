@@ -5,25 +5,31 @@ fun main() {
     /* FINAL:  EMPLOYMENT SYSTEM
     GROUP MEMBERS : [DIOCSON, SULLAN, LUPUYON, LUMO-OS]
     USER: Human Resources (HR)
+
+    INTRODUCTION: The mini system we've developed through console navigation is the Employee System. It's purpose isto gather personal
+                  information of employees within a company. This system allows for updating employee details, though with some limitations.
+                  Additionally, it can remove or deactivate employees who are no longer with the company.
     */
-    val employees = mutableListOf<Employee>()
+    val employees = mutableListOf<Employee>() // List to hold employee data
 
     var choice: Int = -1
     while (choice != 0) {
-        println("\u001B[34m=============================")
+        // Display main menu options
+        println("\u001B[34m=================================")
         println("\u001B[34mPERSONNEL MANAGEMENT DASHBOARD")
-        println("\u001B[34m=============================")
+        println("\u001B[34m=================================")
         println("\u001B[34m[1.] ADD NEW EMPLOYEE")
         println("\u001B[34m[2.] LIST OF EMPLOYEES")
         println("\u001B[34m[3.] UPDATE EXISTING EMPLOYEE")
         println("\u001B[34m[4.] DEACTIVATE EMPLOYEE")
         println("\u001B[34m[5.] EXIT DASHBOARD")
-        println("\u001B[34m=============================")
-        println("\u001B[34mEnter your choice: ")
+        println("\u001B[34m=================================")
+        println("Enter your choice: ")
         val input = readLine()
         if (input != null) {
             choice = input.toIntOrNull() ?: -1
 
+            // Perform action based on user's choice
             when (choice) {
                 1 -> {
                     addNewEmployee(employees)
@@ -51,6 +57,13 @@ fun main() {
 }
 
 fun addNewEmployee(employees: MutableList<Employee>) {
+    /*  Add New Employee
+    DESCRIPTION: Collects employee information from the user and creates a new Employee object.
+    */
+    // Input employee details
+    // Validate input for each field
+    // Get current date and time
+    // Create Employee object and add it to the list of employees
     println("\nADD NEW EMPLOYEE [Please fill all the information needed below.]")
 
     var firstName: String? = null
@@ -167,6 +180,10 @@ fun addNewEmployee(employees: MutableList<Employee>) {
 }
 
 fun displayEmployees(employees: List<Employee>) {
+    /* Display Employees
+    DESCRIPTION: Prints out the details of all employees currently stored in the system.
+    */
+    // Iterate over the list of employees and print their details
     println("\u001B[32m=============================")
     println("\u001B[32mLIST OF REGISTERED EMPLOYEES:")
     employees.forEachIndexed { index, employee ->
@@ -176,6 +193,13 @@ fun displayEmployees(employees: List<Employee>) {
 }
 
 fun updateEmployee(employees: MutableList<Employee>) {
+    /* Update Employee
+    DESCRIPTION: Allows the user to update specific details of an existing employee.
+    */
+    // Prompt user for employee ID to update
+    // Find the employee by ID
+    // Prompt user for which detail to update
+    // Update the selected detail
     println("\u001B[32m=============================")
     println("\u001B[32mUPDATE EXISTING EMPLOYEE")
     println("\u001B[32m=============================")
@@ -227,6 +251,13 @@ fun updateEmployee(employees: MutableList<Employee>) {
 }
 
 fun deactivateEmployee(employees: MutableList<Employee>) {
+    /* Deactivate Employee
+    DESCRIPTION: Removes an employee from the system based on their ID.
+    */
+    // Prompt user for employee ID to deactivate
+    // Find the employee by ID
+    // Confirm removal with user
+    // Remove the employee from the list
     println("\nDEACTIVATE EMPLOYEE")
     println("Enter the ID of the employee you want to deactivate: ")
     val employeeId = readLine()?.toIntOrNull()
@@ -246,6 +277,9 @@ fun deactivateEmployee(employees: MutableList<Employee>) {
 }
 
 data class Employee(
+    /*
+    DESCRIPTION: Data class to hold information about an employee.
+    */
     val firstName: String,
     val middleName: String?,
     val lastName: String,
@@ -259,4 +293,3 @@ data class Employee(
     val currentDate: LocalDate?,
     val currentTime: LocalTime?,
 )
-
